@@ -26,8 +26,8 @@ script:
     source build/envsetup.sh
     # Choose build flavor as "eng" or "userdebug"
     BUILD_FLAVOR="eng"
-    launch omni_Y10G001S4M-${BUILD_FLAVOR}
-    make -j$(nproc --all) recoveryimage
+    lunch omni_Y10G001S4M-${BUILD_FLAVOR}
+    mka -j$(nproc --all) recoveryimage
     exit
     EOF
 after_success:
