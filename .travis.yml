@@ -35,7 +35,7 @@ script:
   - ( rm -rf system/vold || true) && git clone https://github.com/omnirom/android_system_vold -b android-6.0 --depth 1 system/vold
   - |
     docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/cmbuild/twrp/:rw,z" yshalsager/cyanogenmod bash << EOF
-    sudo apt-get update -qqy
+    #sudo apt-get update -qqy
     #sudo apt-get install -qqy --no-install-recommends openjdk-8-jdk-headless
     cd /home/cmbuild/twrp/
     source build/envsetup.sh
