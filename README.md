@@ -1,1 +1,0 @@
-twrp_device_Unowhy_Y10G001S4M
