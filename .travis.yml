@@ -43,7 +43,7 @@ deploy:
   file: $HOME/twrp/*.img
   on:
     tags: false
-    repo: Edrow-6/twrp_device_Unowhy_Y10G001S4M_compiled
+    repo: Edrow-6/twrp_device_Unowhy_Y10G001S4M
     branch: master
 branches:
   only:
