@@ -24,15 +24,15 @@ script:
     docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/builder/twrp/:rw,z" -v "${HOME}/.ccache:/srv/ccache:rw,z" fr3akyphantom/droid-builder bash << EOF
     cd /home/builder/twrp/
     source build/envsetup.sh
-    lunch omni_Y10G001S4M_EEA-eng
-    mka -j$(nproc --all) recoveryimage
+    lunch omni_Y10G001S4M_EEA-userdebug
+    make -j$(nproc --all) recoveryimage
     exit
     EOF
 after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
-  - cp $HOME/twrp/out/target/product/Y10G001S4M/recovery.img $HOME/twrp/TWRP-$version-Y10G001S4M-$(date +"%Y%m%d")-Unofficial.img
+  - cp $HOME/twrp/out/target/product/Y10G001S4M_EEA/recovery.img $HOME/twrp/TWRP-$version-Y10G001S4M_EEA-$(date +"%Y%m%d")-Unofficial.img
   - cd $HOME/twrp/
-  - curl -s --upload-file TWRP-$version-Y10G001S4M-$(date +"%Y%m%d")-Unofficial.img https://file.io/ && echo ""
+  # - curl -s --upload-file TWRP-$version-Y10G001S4M_EEA-$(date +"%Y%m%d")-Unofficial.img https://file.io/ && echo ""
 deploy:
   skip_cleanup: true
   provider: releases
