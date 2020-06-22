@@ -12,7 +12,7 @@ PRODUCT_COPY_FILES += device/UNOWHY/Y10G001S4M_EEA/prebuilt/zImage:kernel
 # Fles under $(LOCAL_PATH)/recovery/root/ gets automatically copied into recovery
 # PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/root/*:root/*
 
-PRODUCT_DEVICE := Y10G001S4M
+PRODUCT_DEVICE := Y10G001S4M_EEA
 PRODUCT_NAME := omni_Y10G001S4M_EEA
 PRODUCT_BRAND := UNOWHY
 PRODUCT_MODEL := Y10G001S4M_EEA
